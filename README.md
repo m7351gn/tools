@@ -3,4 +3,4 @@
 
 ## A list of external useful tools
 
-[https://www.opendem.info/arc2meters.html](https://www.opendem.info/arc2meters.html "Arc to meters converter")
+[Arc to meters converter](https://www.opendem.info/arc2meters.html "Arc to meters converter")
