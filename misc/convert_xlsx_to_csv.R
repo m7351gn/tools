@@ -1,3 +1,6 @@
 library(openxlsx)
-data <- read.xlsx('data.xlsx') 
-write.csv(data, 'data.csv', row.names = F)
+
+file.name <- 'data'
+
+data <- read.xlsx(paste0(file.name, '.xlsx'))
+write.csv(data, paste0(file.name, '.csv', row.names = F))
