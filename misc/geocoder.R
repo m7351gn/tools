@@ -5,12 +5,12 @@ library(tidyverse)
 library(tidygeocoder)
 
 #### load file and choose output file name ####
-file.name <- 'GWI_water_treatment_plants_raw.xlsx'
+file.name <- 'points_raw.xlsx'
 df <- read.xlsx(file.name)
 # df <- read.csv(file.name)
 colnames(df)
 
-outputName <- 'GWI_water_treatment_plants_geocoded.csv'
+outputName <- 'points_geocoded.csv'
 
 #### geocode places using 'osm' method first #### 
 # most precise but may not find some places
