@@ -1,5 +1,9 @@
+library(vroom)
+
+file.name <- 'volumes_2015_5arcmin'
+
 #get pcraster map2col file
-inputFile_PCR <- read.table(file = 'map2col.txt', 
+inputFile_PCR <- read.table(file = paste0(file.name, '.txt'), 
                             header = FALSE, stringsAsFactors = FALSE) 
 
 #create cell id array
@@ -12,4 +16,4 @@ inputFile_PCR_cell_ID <- cbind(cell_ids, inputFile_PCR)
 colnames(inputFile_PCR_cell_ID) <- c('cell_ID', 'lon','lat','variable')
 
 #save
-write.csv(inputFile_PCR_cell_ID, 'map2col.csv', row.names = F)
+vroom_write(inputFile_PCR_cell_ID, paste0(file.name, '.csv'), ",")
