@@ -8,3 +8,5 @@
 [Color picker from image](https://imagecolorpicker.com/color-code)
 
 [Color blindness simulator](https://colororacle.org/)
+
+[Latex table generator](https://www.tablesgenerator.com/)
