@@ -1,5 +1,5 @@
 # tools
- Various tools for geospatial modelling
+ Various tools for geospatial modelling and general academic work
 
 ## A list of web tools
 
