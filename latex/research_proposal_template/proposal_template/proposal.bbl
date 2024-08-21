@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{lowry1951protein}
+\bibinfo{author}{Lowry, O.~H.}, \bibinfo{author}{Rosebrough, N.~J.},
+  \bibinfo{author}{Farr, A.~L.}, \bibinfo{author}{Randall, R.~J.} \emph{et~al.}
+\newblock \bibinfo{title}{Protein measurement with the folin phenol reagent.}
+\newblock \emph{\bibinfo{journal}{Journal of biological chemistry}}
+  \textbf{\bibinfo{volume}{193}}, \bibinfo{pages}{265--275}
+  (\bibinfo{year}{1951}).
+
+\bibitem{mandelbrot1982fractal}
+\bibinfo{author}{Mandelbrot, B.~B.} \& \bibinfo{author}{Mandelbrot, B.~B.}
+\newblock \emph{\bibinfo{title}{The fractal geometry of nature}},
+  vol.~\bibinfo{volume}{1} (\bibinfo{publisher}{WH freeman New York},
+  \bibinfo{year}{1982}).
+
+\end{thebibliography}

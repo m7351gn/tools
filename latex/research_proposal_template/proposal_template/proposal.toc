@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {}Abstract}{3}{Doc-Start}%
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background}{4}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}An additional subsection}{4}{subsubsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}State of the art}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Knowledge gaps}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Objective and research questions}{6}{section.2}%
+\contentsline {section}{\numberline {3}Methods}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Methods tackling the first research question}{7}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Timetable}{8}{section.4}%
+\contentsline {section}{\numberline {5}Collaborations}{9}{section.5}%
+\contentsline {section}{\numberline {6}Data management plan}{9}{section.6}%
+\contentsline {section}{References}{10}{section.6}%
