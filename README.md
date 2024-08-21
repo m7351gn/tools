@@ -9,7 +9,6 @@
 
 [Hexa color picker](https://htmlcolorcodes.com/color-picker/)
 
-
 [Color blindness simulator](https://colororacle.org/)
 
 [Latex table generator](https://www.tablesgenerator.com/)
