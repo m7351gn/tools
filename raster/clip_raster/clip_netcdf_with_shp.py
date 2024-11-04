@@ -5,53 +5,63 @@ import geopandas as gpd
 import regionmask
 from get_coordinates_corners import *
 
-#### paths
-# ~ inputPathGGMInput = '/eejit/depfg/sutan101/data/globgm/downloaded_from_yoda_on_2023-03-13/research-globgm/input/version_1.0'
-# inputPathGGMOutput = '/eejit/depfg/sutan101/data/globgm_groundwater_netcdf_files/v20230512/upscaled_to_5_min/'
-inputPathNC = ''
-inputPathSHP = ''
 
-#### read files 
-#shp
-# ~ gdf_country = gpd.read_file('Netherlands_shp/Netherlands.shp')
-gdf_country = gpd.read_file(inputPathSHP + 'turkeydissolve.shp')
-# ~ gdf_nl = gpd.read_file('Netherlands_shp/Netherlands.shp')
-# ~ gdf_conus = gpd.read_file('CONUS_mask/CONUS_mask.shp')
+#### files and variable names
 
-# ~ print(gdf_nl)
-# ~ print(gdf_conus)
+## clipping shapefile
+inputPathShp = 'california-wgs84/'
+filename_shp = 'california-wgs84.shp'
 
-#nc
-with xr.open_dataset(inputPathNC + 'population_2023.nc', decode_coords = 'all') as file_nc:
-# ~ with xr.open_dataset(inputPathNC + 'groundwater_depth_bottom_30sec_monthly_1958-2015_upscaled_to_5min.nc', decode_coords = 'all') as file_nc:
-    
-    raster_to_clip = file_nc
-    
-# ~ print(glob_gm_5arcmin) 
-# ~ exit()
+## input / output paths netcdf 
+inputPathNetcdf = '5 arcmin - remap/'
+outputPathNetcdf = '5 arcmin - regional/'
+
+## region name for output file naming
+region_name = 'California'
+
+## filenames
+filename_netcdf = 'compounds_W5E5-GSIM-GRDC_5arcmin_monthly_1990-2019'
+filename_netcdf_input = filename_netcdf + '.nc'
+filename_netcdf_output = filename_netcdf + '_' + region_name + '.nc'
+
+## variable name contained in netcdf file
+netcdf_variable_name = 'compounds'
+
+#### load netcdf and shapefile
+gdf_country = gpd.read_file(inputPathShp + filename_shp)
+
+
+with xr.open_dataset(inputPathNetcdf + filename_netcdf_input) as file_nc:
+    netcdf_global = file_nc
+
+#print(gdf_country)
+print(netcdf_global) 
 
 #### get square boundary to clip
 shp_bounds = get_coordinates_corners(gdf_country)
+print(shp_bounds)
 
 
-nc_varname = 'population'
 #### slice netcdf
-sliced_nc = raster_to_clip[nc_varname].sel(
+sliced_nc = netcdf_global[netcdf_variable_name].sel(
+
             lon=slice(shp_bounds["lon"][0], shp_bounds["lon"][1]),
-            lat=slice(shp_bounds["lat"][1], shp_bounds["lat"][0]))
-
-print(sliced_nc)
-
-#### mask sliced netcdf
-gridded_hydrowaste_masked = regionmask.mask_3D_geopandas(gdf_country,
+            lat=slice(shp_bounds["lat"][0], shp_bounds["lat"][1]))
+            
+            #lon=slice(shp_bounds["lon"][1], shp_bounds["lon"][0]),
+            #lat=slice(shp_bounds["lat"][1], shp_bounds["lat"][0]))
+            
+            
+#### mask sliced netcdf and clip
+clipping_mask = regionmask.mask_3D_geopandas(gdf_country,
                                             sliced_nc.lon,
                                             sliced_nc.lat)
 
 
-sliced_nc_masked = sliced_nc.where(gridded_hydrowaste_masked)
+sliced_nc_masked = sliced_nc.where(clipping_mask)            
 
-# ~ print(sliced_nc_masked)
+#print(sliced_nc_masked)
+#exit()
 
 #### save clipped netcdf to disk
-sliced_nc_masked.to_netcdf('population_2023_turkey.nc')
-# ~ sliced_nc_masked.to_netcdf('globgm_bottom_5arcmin_monthly_1950_2015_conus.nc')
+sliced_nc_masked.to_netcdf(outputPathNetcdf + filename_netcdf_output)
