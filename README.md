@@ -11,4 +11,6 @@
 
 [Color blindness simulator](https://colororacle.org/)
 
+[Color blender](https://meyerweb.com/eric/tools/color-blend/#::1:hex)
+
 [Latex table generator](https://www.tablesgenerator.com/)
