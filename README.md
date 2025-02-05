@@ -14,3 +14,6 @@
 [Color blender](https://meyerweb.com/eric/tools/color-blend/#::1:hex)
 
 [Latex table generator](https://www.tablesgenerator.com/)
+
+## Some commands
+map2col -m 0 in.map out.txt -M
