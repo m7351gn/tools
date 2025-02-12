@@ -1,6 +1,10 @@
 # tools
  Various tools for geospatial modelling and general academic work
 
+## Datasets
+
+[HydroATLAS](https://www.hydrosheds.org/hydroatlas)
+
 ## A list of web tools
 
 [Arc to meters converter](https://www.opendem.info/arc2meters.html)
