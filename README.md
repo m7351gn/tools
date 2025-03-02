@@ -21,5 +21,7 @@
 
 [ggplot tips](http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization)
 
+[cdo](https://code.mpimet.mpg.de/projects/cdo/embedded/index.html)
+
 ## Some commands
 map2col -m 0 in.map out.txt -M
