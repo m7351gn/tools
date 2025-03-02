@@ -19,5 +19,7 @@
 
 [Latex table generator](https://www.tablesgenerator.com/)
 
+[ggplot tips](http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization)
+
 ## Some commands
 map2col -m 0 in.map out.txt -M
