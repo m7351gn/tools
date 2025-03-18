@@ -1,0 +1,17 @@
+name: mypy
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - numpy
+  - matplotlib-base
+  - pcraster
+  - pip
+  - owslib
+  - xarray
+  - geopandas
+  - regionmask
+  - pandas
+  - netcdf4
+  - h5netcdf
